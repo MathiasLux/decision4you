@@ -1,13 +1,52 @@
 @startuml
 
-class Project
-{
- - String : name
-}
-
 class Gegenstand
 {
- - String : name
+ - name : String
+ - thema : String
+ - beschreibung : String
+ - alternativen : List<>
+ - gruppen : List<>
+ - eintritt : Eintritt
+ - punkte : Punkte
+ - dauer : int
+ --
+ + addAlternative : void
+ + removeAlternative
+ + addGruppe
+ + removeGruppe
+ + editGruppe
+ + addKriterie
+ + speichern
+ + veroeffentlichen
+ + setEintritt
+ + setDauer
+ + setPunkte
 }
+
+enum Eintritt
+{
+- OFFEN
+- EINLADUNG
+}
+
+enum Punkte
+{
+- 3
+- 5
+}
+
+class Gruppe
+{
+ - name : String
+ - kriterie : List<>
+ --
+ - addKriterie
+ -
+}
+
+
+
+
 
 @enduml
