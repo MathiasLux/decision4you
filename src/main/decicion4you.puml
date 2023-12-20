@@ -42,7 +42,14 @@ class Gruppe
  - kriterie : List<>
  --
  - addKriterie
- -
+ - removeKriterie
+ - editKriterie
+}
+
+class Kriterie
+{
+ - name : String
+ - punkte : float
 }
 
 
