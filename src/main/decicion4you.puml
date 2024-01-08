@@ -1,5 +1,14 @@
 @startuml
 
+class Project
+{
+ - name : String
+ - gegenstand : List<>
+ --
+ + addGegenstand
+ + removeGegenstand
+}
+
 class Gegenstand
 {
  - name : String
@@ -11,7 +20,7 @@ class Gegenstand
  - punkte : Punkte
  - dauer : int
  --
- + addAlternative : void
+ + addAlternative
  + removeAlternative
  + addGruppe
  + removeGruppe
@@ -41,19 +50,21 @@ class Gruppe
  - name : String
  - kriterie : List<>
  --
- - addKriterie
- - removeKriterie
- - editKriterie
+ + addKriterie
+ + removeKriterie
 }
 
 class Kriterie
 {
  - name : String
- - punkte : float
 }
 
 
-
+Project -- Gegenstand
+Gegenstand -- Gruppe
+Gruppe -- Kriterie
+Gegenstand - Punkte
+Gegenstand - Eintritt
 
 
 @enduml
